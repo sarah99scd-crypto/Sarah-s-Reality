@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Out, Become K-Pop Idol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-button {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            background-color: #000;
+            color: #0ff;
+            border: 2px solid #0ff;
+            cursor: pointer;
+            text-shadow: 
+                0 0 5px #0ff,
+                0 0 10px #0ff;
+            box-shadow: 
+                0 0 8px #0ff,
+                inset 0 0 8px rgba(0, 255, 255, 0.1);
+            transition: all 0.2s;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #0ff;
+            color: #000;
+            box-shadow: 
+                0 0 15px #0ff,
+                0 0 25px #0ff,
+                inset 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:active {
+            transform: scale(0.95);
+        }
+
+        .content {
+            max-width: 800px;
+            padding: 0 24px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cfefff;
+            text-shadow:
+                0 0 6px #0ff,
+                0 0 12px rgba(0, 255, 255, 0.4);
+        }
+
+        .content p { margin-bottom: 16px; }
+        .content p:first-child { margin-bottom: 32px; }
+        .content p:last-child { margin-bottom: 0; }
+
+        .first-sentence {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.125em;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p><strong><span class="first-sentence">You have chosen the path for Sarah to drop out and become a K-pop Idol</span></strong></p>
+        <p>Sarah's passion for dancing had become a big part of her identity, something that she was unable to ignore. This passion and longing for more drove her out of college, so she decided to drop out and fight towards her dream of becoming a K-Pop Idol. 
+
+Despite multiple attempts, Sarah was left with failure after failure. This path proved to be more difficult than she had ever imagined, leaving her without a college degree, in lots of debt, and wondering what could have been…</p>
+
+        <p>The years that followed were difficult. Sarah took various part-time jobs to try and stay afloat as the weight of her student loans and credit card debt overwhelmed her. She moved back in with family to save money, and the distance from her dream felt like a constant ache.</p>
+
+        <p>Her days became a dull cycle of work, sleep, and financial stress. Friends from college were advancing in their careers while she struggled to pay bills. The apartment she had once imagined having felt impossibly out of reach, and even small luxuries such as coffee with friends became calculated expenses she often couldn't afford.</p>
+    </div>
+    <button class="back-button" onclick="window.location.href='index.html'">Start Over</button>
+</body>
+</html>
+

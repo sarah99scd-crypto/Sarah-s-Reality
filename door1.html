@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate, Get A Stable Job</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-button {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            background-color: #000;
+            color: #0ff;
+            border: 2px solid #0ff;
+            cursor: pointer;
+            text-shadow: 
+                0 0 5px #0ff,
+                0 0 10px #0ff;
+            box-shadow: 
+                0 0 8px #0ff,
+                inset 0 0 8px rgba(0, 255, 255, 0.1);
+            transition: all 0.2s;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #0ff;
+            color: #000;
+            box-shadow: 
+                0 0 15px #0ff,
+                0 0 25px #0ff,
+                inset 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:active {
+            transform: scale(0.95);
+        }
+
+        .content {
+            max-width: 800px;
+            padding: 0 24px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cfefff;
+            text-shadow:
+                0 0 6px #0ff,
+                0 0 12px rgba(0, 255, 255, 0.4);
+        }
+
+        .content p { margin-bottom: 16px; }
+        .content p:first-child { margin-bottom: 32px; }
+        .content p:last-child { margin-bottom: 0; }
+
+        .first-sentence {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.125em; /* slight increase */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p><strong><span class="first-sentence">You have chosen the path for Sarah to graduate from college and find a stable job.</span></strong></p>
+
+        <p>Once graduating from college, Sarah managed to land a position in a stable job that provided her with sufficient money, building up a stable, balanced, and normal life.</p>
+
+        <p>Three years into her job, Sarah has settled into a comfortable routine. She has a nice apartment, a small circle of close friends, and enough saved for her own occasional vacations.</p>
+
+        <p>Over the next few years, Sarah continues to have the life she had wished for. She receives steady promotions and her income grows. She takes up hobbies like painting and biking, maintains close relationships with her family and friends, and travels to places she's always dreamed of visiting.</p>
+
+        <p>By her early thirties, Sarah feels content and fulfilled. Her life is peaceful, organized, and exactly what she hoped would happen after college.</p>
+    </div>
+    <button class="back-button" onclick="window.location.href='index.html'">Start Over</button>
+</body>
+</html>
+

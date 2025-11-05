@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reality - Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            gap: 30px;
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+            text-shadow: 
+                0 0 10px #0ff,
+                0 0 20px #0ff,
+                0 0 30px #0ff,
+                2px 2px 0px #0ff;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            font-smooth: never;
+            -webkit-font-smoothing: none;
+            max-width: 90%;
+        }
+
+        .title-subtitle {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            text-shadow: 
+                0 0 10px #0ff,
+                0 0 20px #0ff,
+                0 0 30px #0ff,
+                2px 2px 0px #0ff;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            font-smooth: never;
+            -webkit-font-smoothing: none;
+            white-space: nowrap;
+        }
+
+        .back-button {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            background-color: #000;
+            color: #0ff;
+            border: 2px solid #0ff;
+            cursor: pointer;
+            text-shadow: 
+                0 0 5px #0ff,
+                0 0 10px #0ff;
+            box-shadow: 
+                0 0 8px #0ff,
+                inset 0 0 8px rgba(0, 255, 255, 0.1);
+            transition: all 0.2s;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #0ff;
+            color: #000;
+            box-shadow: 
+                0 0 15px #0ff,
+                0 0 25px #0ff,
+                inset 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:active {
+            transform: scale(0.95);
+        }
+
+        .doors-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            perspective: 1000px;
+        }
+
+        .door {
+            width: 200px;
+            height: 300px;
+            background-color: #1a1a1a;
+            border: 3px solid #0ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            cursor: pointer;
+            box-shadow: 
+                0 0 15px #0ff,
+                inset 0 0 20px rgba(0, 255, 255, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.35s ease;
+            position: relative;
+            transform-origin: left center;
+            will-change: transform;
+        }
+
+        .door:hover {
+            border-color: #0ff;
+            box-shadow: 
+                0 0 25px #0ff,
+                0 0 40px #0ff,
+                inset 0 0 30px rgba(0, 255, 255, 0.2);
+            transform: rotateY(-15deg);
+        }
+
+        .door:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        .door-sign {
+            width: 100%;
+            background-color: #000;
+            border: 2px solid #0ff;
+            padding: 15px 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+            color: #0ff;
+            text-shadow: 
+                0 0 5px #0ff,
+                0 0 10px #0ff;
+            box-shadow: 
+                0 0 8px #0ff,
+                inset 0 0 10px rgba(0, 255, 255, 0.1);
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            font-smooth: never;
+            -webkit-font-smoothing: none;
+        }
+
+        .door-sign-small {
+            font-size: 13px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .door-frame {
+            width: 100%;
+            height: 60%;
+            background-color: #0a0a0a;
+            border: 2px solid #0ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+
+        .door-handle {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 8px;
+            background-color: #0ff;
+            border: 2px solid #0ff;
+            border-radius: 4px;
+            box-shadow: 
+                0 0 8px #0ff,
+                0 0 12px #0ff,
+                inset 0 0 5px rgba(0, 255, 255, 0.5);
+            transform-origin: right center;
+            transition: transform 0.25s ease;
+        }
+
+        .door-handle::before {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #0ff;
+            border: 2px solid #0ff;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 8px #0ff,
+                0 0 12px #0ff;
+            transition: transform 0.25s ease;
+        }
+
+        /* Turn handle when door is hovered */
+        .door:hover .door-handle {
+            transform: translateY(-50%) rotate(-35deg);
+        }
+
+        .door:hover .door-handle::before {
+            transform: translateY(-50%) rotate(-20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1 class="title">You Are In The Present</h1>
+            <h1 class="title-subtitle">Choose Sarah's Next Move:</h1>
+        </div>
+        <div class="doors-container">
+            <div class="door" onclick="window.location.href='door1.html'">
+                <div class="door-sign">Graduate, Get A Stable Job</div>
+                <div class="door-frame">
+                    <div class="door-handle"></div>
+                </div>
+            </div>
+            <div class="door" onclick="window.location.href='door2.html'">
+                <div class="door-sign door-sign-small">Drop Out,<br>Become K-Pop Idol</div>
+                <div class="door-frame">
+                    <div class="door-handle"></div>
+                </div>
+            </div>
+            <div class="door" onclick="window.location.href='door3.html'">
+                <div class="door-sign">Graduate, Work Overseas</div>
+                <div class="door-frame">
+                    <div class="door-handle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="back-button" onclick="window.location.href='index.html'">Start Over</button>
+</body>
+</html>
+
